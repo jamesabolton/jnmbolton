@@ -1,0 +1,58 @@
+﻿@model jnmbolton.web.core.ViewModels.ContactForm
+@{
+	ViewBag.Title = "Contact";
+}
+<div id="contact" class="clearfix">
+	<div id="map">
+		<p>You need Javascript enabled in your browser to display this website properly. Thank you.</p>
+	</div>
+	<div class="send shadow">
+		<h3><a href="#contactForm">Open contact form...</a></h3>
+
+		@using (Ajax.BeginForm("Contact", "Home",
+			new AjaxOptions { Url = "/Home/Contact", HttpMethod = "POST", LoadingElementId = "sendingMessage", OnSuccess = "contactSendSuccess()", OnFailure = "contactSendFailure()", OnComplete = "contactSendComplete()", OnBegin = "contactSendBegin()" },
+			new { @class = "clearfix", @id = "formContact" }))
+  {
+			@Html.AntiForgeryToken()
+			<ul class="clearfix">
+				<li>
+					@Html.LabelFor(model => model.Name)
+					@Html.TextBoxFor(model => model.Name, new { @placeHolder = "Please type your name", @maxlength = "40" })
+					@Html.ValidationMessageFor(model => model.Name)
+				</li>
+				<li>
+					@Html.LabelFor(model => model.EmailAddress)
+					@Html.TextBoxFor(model => model.EmailAddress, new { @placeHolder = "Please type your email address", @maxlength = "50" })
+					@Html.ValidationMessageFor(model => model.EmailAddress)
+				</li>
+				<li>
+					@Html.LabelFor(model => model.Number)
+					@Html.TextBoxFor(model => model.Number, new { @placeHolder = "Please type your phone number", @maxlength = "50" })
+				</li>
+				<li>
+					@Html.LabelFor(model => model.Message)
+					@Html.TextAreaFor(model => model.Message, new { @placeHolder = "Please type your message" })
+					@Html.ValidationMessageFor(model => model.Message)
+				</li>
+				<li class="clearfix">
+					@Html.ValidationSummary(true)
+					<label>&nbsp;</label>
+					<input type="submit" id="sendMessage" name="sendMessage" value="Send Email" />
+				</li>
+			</ul>
+  }
+		<div class="clear"></div>
+		<div id="sendingMessage" class="statusMessage">
+			<p><i class="icon-spinner icon-spin"></i>Sending your message. Please wait...</p>
+		</div>
+		<div id="successMessage" class="statusMessage">
+			<p><i class="icon-ok"></i>Thanks for sending your message! We'll get back to you shortly.</p>
+		</div>
+		<div id="failureMessage" class="statusMessage">
+			<p><i class="icon-warning-sign"></i>There was a problem sending your message. Please try again.</p>
+		</div>
+		<div id="incompleteMessage" class="statusMessage">
+			<p><i class="icon-warning-sign"></i>Please complete all the fields in the form before sending.</p>
+		</div>
+	</div>
+</div>

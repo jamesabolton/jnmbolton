@@ -1,0 +1,749 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{629DA7D9-2998-4FEF-82EE-1F739006E199}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>jnmbolton.web</RootNamespace>
+    <AssemblyName>jnmbolton.web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DataAnnotationsExtensions">
+      <HintPath>..\packages\DataAnnotationsExtensions.1.1.0.0\lib\NETFramework40\DataAnnotationsExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.3.0.13117\lib\net45-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.3.0.13117\lib\net45-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.3.0.13117\lib\net45-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.3.0.13117\lib\net45-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.3.0.13117\lib\net45-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.3.0.13117\lib\net45-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.Extended">
+      <HintPath>..\packages\EntityFramework.Extended.5.0.0.71\lib\net45\EntityFramework.Extended.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Client">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Client.1.1.1\lib\net45\Microsoft.AspNet.SignalR.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Core">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.1.1.1\lib\net40\Microsoft.AspNet.SignalR.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Owin.1.1.1\lib\net45\Microsoft.AspNet.SignalR.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.SystemWeb">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.SystemWeb.1.1.1\lib\net45\Microsoft.AspNet.SignalR.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.4.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Data.OData.5.4.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.1.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Helpers">
+      <HintPath>..\packages\microsoft-web-helpers.2.1.20710.2\lib\net40\Microsoft.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc">
+      <HintPath>..\packages\Mvc4Futures.4.0.20710.0\lib\net40\Microsoft.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.1\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.5\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Spatial, Version=5.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\System.Spatial.5.4.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http.OData, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.OData.4.0.1\lib\net40\System.Web.Http.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.2.0.20710.0\lib\net40\WebMatrix.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebPages.OAuth, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.OAuth.2.0.20710.0\lib\net40\Microsoft.Web.WebPages.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.2.0.20710.0\lib\net40\WebMatrix.WebData.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Images\arrow.png" />
+    <Content Include="Content\Images\bg-dark.jpg" />
+    <Content Include="Content\Images\bg-paper.png" />
+    <Content Include="Content\Images\bg-sh-bott-dark.png" />
+    <Content Include="Content\Images\detailbott.png" />
+    <Content Include="Content\Images\facebook-dark.gif" />
+    <Content Include="Content\Images\gallery\code.png" />
+    <Content Include="Content\Images\gallery\img1.jpg" />
+    <Content Include="Content\Images\gallery\img10.jpg" />
+    <Content Include="Content\Images\gallery\img2.jpg" />
+    <Content Include="Content\Images\gallery\img3.jpg" />
+    <Content Include="Content\Images\gallery\img4.jpg" />
+    <Content Include="Content\Images\gallery\img5.jpg" />
+    <Content Include="Content\Images\gallery\img6.jpg" />
+    <Content Include="Content\Images\gallery\img7.jpg" />
+    <Content Include="Content\Images\gallery\img8.jpg" />
+    <Content Include="Content\Images\gallery\img9.jpg" />
+    <Content Include="Content\Images\gallery\picture1.jpg" />
+    <Content Include="Content\Images\gallery\picture2.jpg" />
+    <Content Include="Content\Images\gallery\picture3.jpg" />
+    <Content Include="Content\Images\gallery\skills.png" />
+    <Content Include="Content\Images\gallery\txhr.png" />
+    <Content Include="Content\Images\gmap_pin.png" />
+    <Content Include="Content\Images\hangouts.png" />
+    <Content Include="Content\Images\line-dark.gif" />
+    <Content Include="Content\Images\linkedin-dark.gif" />
+    <Content Include="Content\Images\Vendor\jQuery\plugins\mCSB_buttons.png" />
+    <Content Include="Content\Images\nav.png" />
+    <Content Include="Content\Images\pinterest-dark.gif" />
+    <Content Include="Content\Images\prettyPhoto\dark_rounded\btnNext.png" />
+    <Content Include="Content\Images\prettyPhoto\dark_rounded\btnPrevious.png" />
+    <Content Include="Content\Images\prettyPhoto\dark_rounded\contentPattern.png" />
+    <Content Include="Content\Images\prettyPhoto\dark_rounded\default_thumbnail.gif" />
+    <Content Include="Content\Images\prettyPhoto\dark_rounded\loader.gif" />
+    <Content Include="Content\Images\prettyPhoto\dark_rounded\sprite.png" />
+    <Content Include="Content\Images\prettyPhoto\dark_square\btnNext.png" />
+    <Content Include="Content\Images\prettyPhoto\dark_square\btnPrevious.png" />
+    <Content Include="Content\Images\prettyPhoto\dark_square\contentPattern.png" />
+    <Content Include="Content\Images\prettyPhoto\dark_square\default_thumbnail.gif" />
+    <Content Include="Content\Images\prettyPhoto\dark_square\loader.gif" />
+    <Content Include="Content\Images\prettyPhoto\dark_square\sprite.png" />
+    <Content Include="Content\Images\prettyPhoto\default\default_thumb.png" />
+    <Content Include="Content\Images\prettyPhoto\default\loader.gif" />
+    <Content Include="Content\Images\prettyPhoto\default\sprite.png" />
+    <Content Include="Content\Images\prettyPhoto\default\sprite_next.png" />
+    <Content Include="Content\Images\prettyPhoto\default\sprite_prev.png" />
+    <Content Include="Content\Images\prettyPhoto\default\sprite_x.png" />
+    <Content Include="Content\Images\prettyPhoto\default\sprite_y.png" />
+    <Content Include="Content\Images\prettyPhoto\facebook\btnNext.png" />
+    <Content Include="Content\Images\prettyPhoto\facebook\btnPrevious.png" />
+    <Content Include="Content\Images\prettyPhoto\facebook\contentPatternBottom.png" />
+    <Content Include="Content\Images\prettyPhoto\facebook\contentPatternLeft.png" />
+    <Content Include="Content\Images\prettyPhoto\facebook\contentPatternRight.png" />
+    <Content Include="Content\Images\prettyPhoto\facebook\contentPatternTop.png" />
+    <Content Include="Content\Images\prettyPhoto\facebook\default_thumbnail.gif" />
+    <Content Include="Content\Images\prettyPhoto\facebook\loader.gif" />
+    <Content Include="Content\Images\prettyPhoto\facebook\sprite.png" />
+    <Content Include="Content\Images\prettyPhoto\light_rounded\btnNext.png" />
+    <Content Include="Content\Images\prettyPhoto\light_rounded\btnPrevious.png" />
+    <Content Include="Content\Images\prettyPhoto\light_rounded\default_thumbnail.gif" />
+    <Content Include="Content\Images\prettyPhoto\light_rounded\loader.gif" />
+    <Content Include="Content\Images\prettyPhoto\light_rounded\sprite.png" />
+    <Content Include="Content\Images\prettyPhoto\light_square\btnNext.png" />
+    <Content Include="Content\Images\prettyPhoto\light_square\btnPrevious.png" />
+    <Content Include="Content\Images\prettyPhoto\light_square\default_thumbnail.gif" />
+    <Content Include="Content\Images\prettyPhoto\light_square\loader.gif" />
+    <Content Include="Content\Images\prettyPhoto\light_square\sprite.png" />
+    <Content Include="Content\Images\tape.png" />
+    <Content Include="Content\Images\twitter-dark.gif" />
+    <Content Include="Content\Images\Vendor\jQuery\plugins\bg_direction_nav.png" />
+    <Content Include="Content\Images\vimeo-dark.gif" />
+    <Content Include="Content\Styles\Common\common.css">
+      <DependentUpon>common.css.bundle</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\Common\common.min.css">
+      <DependentUpon>common.css.bundle</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\Common\dark.css" />
+    <Content Include="Content\Styles\Common\dark.min.css">
+      <DependentUpon>dark.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\Common\ie.css" />
+    <Content Include="Content\Styles\Common\ie.min.css">
+      <DependentUpon>ie.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\Common\ie8.css" />
+    <Content Include="Content\Styles\Common\ie8.min.css">
+      <DependentUpon>ie8.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\Common\style.css" />
+    <Content Include="Content\Styles\Common\style.min.css">
+      <DependentUpon>style.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\Misc\font-awesome-ie7.css" />
+    <Content Include="Content\Styles\Misc\font-awesome-ie7.min.css">
+      <DependentUpon>font-awesome-ie7.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\Misc\font-awesome.css" />
+    <Content Include="Content\Styles\Misc\font-awesome.min.css">
+      <DependentUpon>font-awesome.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\Vendor\jQuery\plugins\jquery.plugins.css">
+      <DependentUpon>jquery.plugins.css.bundle</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\Vendor\jQuery\plugins\jquery.plugins.min.css">
+      <DependentUpon>jquery.plugins.css.bundle</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\Vendor\jQuery\plugins\jquery.prettyPhoto.css" />
+    <Content Include="Content\Styles\Vendor\jQuery\plugins\jquery.flexslider.css" />
+    <Content Include="Content\Styles\Misc\fullcalendar.min.css">
+      <DependentUpon>fullcalendar.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\Misc\fullcalendar.print.min.css">
+      <DependentUpon>fullcalendar.print.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\Misc\normalize.min.css">
+      <DependentUpon>normalize.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\Vendor\foundation\app.css" />
+    <Content Include="Content\Styles\Vendor\foundation\app.min.css">
+      <DependentUpon>app.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\Vendor\foundation\foundation.css" />
+    <Content Include="Content\Styles\Misc\fullcalendar.css" />
+    <Content Include="Content\Styles\Misc\fullcalendar.print.css" />
+    <Content Include="Content\Styles\Vendor\foundation\foundation.min.css">
+      <DependentUpon>foundation.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\Vendor\jQuery\plugins\jquery.flexslider.min.css">
+      <DependentUpon>jquery.flexslider.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\Vendor\jQuery\plugins\jquery.jqGrid\ellipsis-xbl.xml" />
+    <Content Include="Content\Styles\Vendor\jQuery\plugins\jquery.jqGrid\ui.jqgrid.css" />
+    <Content Include="Content\Styles\Misc\normalize.css" />
+    <Content Include="Content\Styles\Vendor\jQuery\plugins\jquery.jqGrid\ui.jqgrid.min.css">
+      <DependentUpon>ui.jqgrid.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\Vendor\jQuery\plugins\jquery.mCustomScrollbar.css" />
+    <Content Include="Content\Styles\Vendor\jQuery\plugins\jquery.mCustomScrollbar.min.css">
+      <DependentUpon>jquery.mCustomScrollbar.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\Vendor\jQuery\plugins\jquery.prettyPhoto.min.css">
+      <DependentUpon>jquery.prettyPhoto.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\images\animated-overlay.gif" />
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\jquery-ui.css" />
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\jquery-ui.min.css">
+      <DependentUpon>jquery-ui.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\jquery.ui.accordion.css" />
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\jquery.ui.accordion.min.css">
+      <DependentUpon>jquery.ui.accordion.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\jquery.ui.all.css" />
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\jquery.ui.all.min.css">
+      <DependentUpon>jquery.ui.all.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\jquery.ui.autocomplete.min.css">
+      <DependentUpon>jquery.ui.autocomplete.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\jquery.ui.base.css" />
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\jquery.ui.base.min.css">
+      <DependentUpon>jquery.ui.base.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\jquery.ui.button.css" />
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\jquery.ui.button.min.css">
+      <DependentUpon>jquery.ui.button.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\jquery.ui.core.css" />
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\jquery.ui.core.min.css">
+      <DependentUpon>jquery.ui.core.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\jquery.ui.datepicker.min.css">
+      <DependentUpon>jquery.ui.datepicker.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\jquery.ui.dialog.css" />
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\jquery.ui.dialog.min.css">
+      <DependentUpon>jquery.ui.dialog.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\jquery.ui.menu.css" />
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\jquery.ui.menu.min.css">
+      <DependentUpon>jquery.ui.menu.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\jquery.ui.progressbar.min.css">
+      <DependentUpon>jquery.ui.progressbar.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\jquery.ui.resizable.css" />
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\jquery.ui.resizable.min.css">
+      <DependentUpon>jquery.ui.resizable.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\jquery.ui.selectable.css" />
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\jquery.ui.selectable.min.css">
+      <DependentUpon>jquery.ui.selectable.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\jquery.ui.slider.css" />
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\jquery.ui.slider.min.css">
+      <DependentUpon>jquery.ui.slider.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\jquery.ui.spinner.css" />
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\jquery.ui.spinner.min.css">
+      <DependentUpon>jquery.ui.spinner.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\jquery.ui.tabs.css" />
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\jquery.ui.tabs.min.css">
+      <DependentUpon>jquery.ui.tabs.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\jquery.ui.theme.css" />
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\jquery.ui.theme.min.css">
+      <DependentUpon>jquery.ui.theme.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\jquery.ui.tooltip.css" />
+    <Content Include="Content\Styles\Vendor\jQuery\ui\base\jquery.ui.tooltip.min.css">
+      <DependentUpon>jquery.ui.tooltip.css</DependentUpon>
+    </Content>
+    <Content Include="Content\vCard.vcf" />
+    <Content Include="favicon.ico" />
+    <Content Include="Foundation_readme.txt" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Fonts\FontAwesome.otf" />
+    <Content Include="Content\Images\gallery\Thumbs.db" />
+    <None Include="Content\Styles\Common\common.css.bundle" />
+    <None Include="Content\Styles\Vendor\jQuery\plugins\jquery.plugins.css.bundle" />
+    <Content Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </Content>
+    <None Include="Properties\PublishProfiles\ ftp.smarterasp.net.pubxml" />
+    <None Include="Scripts\Misc\misc.js.bundle" />
+    <None Include="Scripts\Vendor\foundation\foundation.plugins.js.bundle" />
+    <None Include="Scripts\Vendor\jQuery\jquery-2.0.0.intellisense.js" />
+    <Content Include="Scripts\Controllers\main.js" />
+    <Content Include="Scripts\Misc\heartcode-canvasloader.js" />
+    <Content Include="Scripts\Misc\heartcode-canvasloader.min.js">
+      <DependentUpon>heartcode-canvasloader.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Misc\misc.js">
+      <DependentUpon>misc.js.bundle</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Misc\misc.min.js">
+      <DependentUpon>misc.js.bundle</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Vendor\jQuery\plugins\jquery.easing.1.3.js" />
+    <Content Include="Scripts\Vendor\foundation\foundation.js" />
+    <Content Include="Scripts\Vendor\foundation\foundation.min.js">
+      <DependentUpon>foundation.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Vendor\foundation\foundation.plugins.js">
+      <DependentUpon>foundation.plugins.js.bundle</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Vendor\foundation\foundation.plugins.min.js">
+      <DependentUpon>foundation.plugins.js.bundle</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Vendor\jQuery\plugins\jquery.cookie.js" />
+    <Content Include="Scripts\Vendor\jQuery\plugins\jquery.cookie.min.js">
+      <DependentUpon>jquery.cookie.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Vendor\jQuery\plugins\jquery.easing.1.3.min.js">
+      <DependentUpon>jquery.easing.1.3.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Vendor\jQuery\plugins\jquery.flexslider.js" />
+    <Content Include="Scripts\Vendor\jQuery\plugins\jquery.flexslider.min.js">
+      <DependentUpon>jquery.flexslider.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Vendor\jQuery\plugins\jquery.gmap.js" />
+    <Content Include="Scripts\Vendor\jQuery\plugins\jquery.gmap.min.js">
+      <DependentUpon>jquery.gmap.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Vendor\jQuery\plugins\jquery.jqGrid.min.js">
+      <DependentUpon>jquery.jqGrid.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Misc\fullcalendar.js" />
+    <Content Include="Scripts\Misc\fullcalendar.min.js">
+      <DependentUpon>fullcalendar.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Misc\gcal.js" />
+    <Content Include="Scripts\Vendor\jQuery\plugins\jquery.jqGrid.js" />
+    <Content Include="Scripts\Misc\json2.js" />
+    <Content Include="Scripts\Vendor\foundation\foundation.alerts.js" />
+    <Content Include="Scripts\Vendor\foundation\foundation.alerts.min.js">
+      <DependentUpon>foundation.alerts.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Vendor\foundation\foundation.clearing.js" />
+    <Content Include="Scripts\Vendor\foundation\foundation.clearing.min.js">
+      <DependentUpon>foundation.clearing.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Vendor\foundation\foundation.dropdown.js" />
+    <Content Include="Scripts\Vendor\foundation\foundation.dropdown.min.js">
+      <DependentUpon>foundation.dropdown.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Vendor\foundation\foundation.forms.js" />
+    <Content Include="Scripts\Vendor\foundation\foundation.forms.min.js">
+      <DependentUpon>foundation.forms.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Vendor\foundation\foundation.joyride.js" />
+    <Content Include="Scripts\Vendor\foundation\foundation.joyride.min.js">
+      <DependentUpon>foundation.joyride.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Vendor\foundation\foundation.magellan.js" />
+    <Content Include="Scripts\Vendor\foundation\foundation.magellan.min.js">
+      <DependentUpon>foundation.magellan.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Vendor\foundation\foundation.orbit.js" />
+    <Content Include="Scripts\Vendor\foundation\foundation.orbit.min.js">
+      <DependentUpon>foundation.orbit.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Vendor\foundation\foundation.placeholder.js" />
+    <Content Include="Scripts\Vendor\foundation\foundation.placeholder.min.js">
+      <DependentUpon>foundation.placeholder.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Vendor\foundation\foundation.reveal.js" />
+    <Content Include="Scripts\Vendor\foundation\foundation.reveal.min.js">
+      <DependentUpon>foundation.reveal.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Vendor\foundation\foundation.section.js" />
+    <Content Include="Scripts\Vendor\foundation\foundation.section.min.js">
+      <DependentUpon>foundation.section.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Vendor\foundation\foundation.tooltips.js" />
+    <Content Include="Scripts\Vendor\foundation\foundation.tooltips.min.js">
+      <DependentUpon>foundation.tooltips.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Vendor\foundation\foundation.topbar.js" />
+    <Content Include="Scripts\Vendor\foundation\foundation.topbar.min.js">
+      <DependentUpon>foundation.topbar.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Vendor\jQuery\jquery-2.0.0.min.js">
+      <DependentUpon>jquery-2.0.0.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Vendor\jQuery\jquery-migrate-1.1.1.min.js">
+      <DependentUpon>jquery-migrate-1.1.1.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Vendor\jQuery\plugins\jquery.maskedinput-1.3.1.min.js">
+      <DependentUpon>jquery.maskedinput-1.3.1.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Vendor\jQuery\plugins\jquery.masonry.js" />
+    <Content Include="Scripts\Vendor\jQuery\plugins\jquery.masonry.min.js">
+      <DependentUpon>jquery.masonry.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Vendor\jQuery\plugins\jquery.mCustomScrollbar.js" />
+    <Content Include="Scripts\Vendor\jQuery\plugins\jquery.mCustomScrollbar.min.js">
+      <DependentUpon>jquery.mCustomScrollbar.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Vendor\jQuery\plugins\jquery.plugins.js">
+      <DependentUpon>jquery.plugins.js.bundle</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Vendor\jQuery\plugins\jquery.plugins.min.js">
+      <DependentUpon>jquery.plugins.js.bundle</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Vendor\jQuery\plugins\jquery.prettyPhoto.js" />
+    <Content Include="Scripts\Vendor\jQuery\plugins\jquery.prettyPhoto.min.js">
+      <DependentUpon>jquery.prettyPhoto.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Vendor\jQuery\plugins\jquery.relatedtweets-1.0.js" />
+    <Content Include="Scripts\Vendor\jQuery\plugins\jquery.relatedtweets-1.0.min.js">
+      <DependentUpon>jquery.relatedtweets-1.0.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Vendor\jQuery\plugins\jquery.signalR-1.1.1.min.js">
+      <DependentUpon>jquery.signalR-1.1.1.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Vendor\jQuery\plugins\jquery.simple-progress-bar.js" />
+    <Content Include="Scripts\Vendor\jQuery\plugins\jquery.simple-progress-bar.min.js">
+      <DependentUpon>jquery.simple-progress-bar.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Vendor\jQuery\plugins\jquery.unobtrusive-ajax.min.js">
+      <DependentUpon>jquery.unobtrusive-ajax.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Vendor\jQuery\ui\jquery-ui-1.10.3.min.js">
+      <DependentUpon>jquery-ui-1.10.3.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Vendor\jQuery\validation\jquery.validate.min.js">
+      <DependentUpon>jquery.validate.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Vendor\jQuery\validation\jquery.validate.unobtrusive.min.js">
+      <DependentUpon>jquery.validate.unobtrusive.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Misc\gcal.min.js">
+      <DependentUpon>gcal.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Misc\html5shiv.js" />
+    <Content Include="Scripts\Vendor\jQuery\jquery-2.0.0.js" />
+    <Content Include="Scripts\Vendor\jQuery\jquery-2.0.0.min.map" />
+    <Content Include="Scripts\Vendor\jQuery\jquery-migrate-1.1.1.js" />
+    <Content Include="Scripts\Vendor\jQuery\ui\jquery-ui-1.10.3.js" />
+    <Content Include="Scripts\Vendor\jQuery\plugins\jquery.maskedinput-1.3.1.js" />
+    <Content Include="Scripts\Vendor\jQuery\plugins\jquery.signalR-1.1.1.js" />
+    <Content Include="Scripts\Vendor\jQuery\plugins\jquery.unobtrusive-ajax.js" />
+    <None Include="Scripts\Vendor\jQuery\plugins\jquery.plugins.js.bundle" />
+    <None Include="Scripts\Vendor\jQuery\validation\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\Vendor\jQuery\validation\jquery.validate.js" />
+    <Content Include="Scripts\Vendor\jQuery\validation\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\Misc\json2.min.js">
+      <DependentUpon>json2.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Misc\jsrender.js" />
+    <Content Include="Scripts\Misc\jsrender.min.js">
+      <DependentUpon>jsrender.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Misc\knockout-2.2.1.debug.js" />
+    <Content Include="Scripts\Misc\knockout-2.2.1.debug.min.js">
+      <DependentUpon>knockout-2.2.1.debug.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Misc\knockout-2.2.1.js" />
+    <Content Include="Scripts\Misc\knockout-2.2.1.min.js">
+      <DependentUpon>knockout-2.2.1.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Misc\modernizr-2.6.2.js" />
+    <Content Include="Scripts\Misc\html5shiv.min.js">
+      <DependentUpon>html5shiv.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Misc\modernizr-2.6.2.min.js">
+      <DependentUpon>modernizr-2.6.2.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Misc\zepto.js" />
+    <Content Include="Scripts\Misc\zepto.min.js">
+      <DependentUpon>zepto.js</DependentUpon>
+    </Content>
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\_RemoveExternalLoginsPartial.cshtml" />
+    <Content Include="Views\Account\_SetPasswordPartial.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Manage.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Shared\_html5shiv.cshtml" />
+    <Content Include="Views\Shared\_Foundation.cshtml" />
+    <Content Include="Views\Home\Foundation_Index.cshtml" />
+    <Content Include="Views\Home\Portfolio.cshtml" />
+    <Content Include="Views\Home\Resume.cshtml" />
+    <Content Include="Views\Home\_Resume.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\Images\Controllers\" />
+    <Folder Include="Content\Styles\Controllers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\jnmbolton.web.core\jnmbolton.web.core.csproj">
+      <Project>{d7be9f03-fe71-42c9-9cab-9f9c7e46a1cf}</Project>
+      <Name>jnmbolton.web.core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:54446/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

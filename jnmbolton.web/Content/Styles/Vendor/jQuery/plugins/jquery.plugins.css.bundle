@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bundle minify="true" runOnBuild="true" output="jquery.plugins.css">
+  <!--The order of the <file> elements determines the order of them when bundled.-->
+	<file>/Content/Styles/Vendor/jQuery/plugins/jquery.mCustomScrollbar.css</file>
+	<file>/Content/Styles/Vendor/jQuery/plugins/jquery.flexslider.css</file>
+	<file>/Content/Styles/Vendor/jQuery/plugins/jquery.prettyPhoto.css</file>
+</bundle>

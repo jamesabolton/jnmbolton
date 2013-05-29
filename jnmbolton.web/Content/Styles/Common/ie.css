@@ -1,0 +1,28 @@
+.shadow:after {
+	-webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, .3)!important;
+	-moz-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3)!important;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3)!important;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	max-width: none;
+	height: 100%;
+}
+#resume .skill .item-skill.shadow:after {
+	display: none;
+}
+.my-progress-bar {
+	background: none repeat scroll 0 0 #ffffff;
+}
+#resume .skill .item-skill h3 {
+	background-color: #ffffff;
+}
+#profile .maindata .item .firsto:before {
+	top: -18px;
+}
+nav ul.shadow:after {
+	display: none;
+}
+#portfolio .box a img {
+	border: none;
+}

@@ -1,0 +1,465 @@
+body {
+	background: #FBFBFB url('/Content/Images/bg-dark.jpg') repeat;
+	color: #66696D;
+}
+
+hr {
+	border-top: 1px dashed #A6B6BF;
+}
+
+.shadow:after {
+	-webkit-box-shadow: 0 15px 10px rgba(0, 0, 0, .7);
+	-moz-box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+	box-shadow: 0 15px 10px rgba(0, 0, 0, 0.7);
+}
+
+/*-------------------------------------------------------*/
+/* Header */
+/*-------------------------------------------------------*/
+
+header h1 {
+	color: #648293;
+}
+
+	header h1 span {
+		color: #DC5038;
+	}
+
+	header h1:hover {
+		color: #DC5038;
+	}
+
+header .titles {
+	color: #fff;
+}
+
+header h2 {
+	background-color: #DC5038;
+}
+
+header h3 {
+	background-color: #648293;
+}
+
+header h2:before {
+	border-color: transparent #aa331f transparent transparent;
+}
+
+header h3:before {
+	border-color: transparent #4a6676 transparent transparent;
+}
+
+/*-------------------------------------------------------*/
+/* Nav */
+/*-------------------------------------------------------*/
+
+nav ul {
+	background-color: #ffffff;
+	border: 7px solid #DADADA;
+}
+
+	nav ul li a {
+		color: #648293;
+		background-position: 100px center;
+	}
+
+		nav ul li a span {
+			color: #DC5038;
+		}
+
+		nav ul li a.active span {
+			opacity: .7;
+			color: #fff;
+		}
+
+		nav ul li a.active:hover span {
+			color: #fff;
+		}
+
+		nav ul li a.active {
+			color: #fff;
+			background: #DC5038 url('/Content/Images/arrow.png') no-repeat 175px center;
+		}
+
+			nav ul li a.active:hover {
+				color: #fff;
+				background-color: #DC5038;
+				background-position: 180px center;
+			}
+
+		nav ul li a:hover {
+			color: #648293;
+			background-color: #ECEEF2;
+		}
+
+			nav ul li a:hover span {
+				color: #DC5038;
+			}
+
+/*-------------------------------------------------------*/
+/* Profile */
+/*-------------------------------------------------------*/
+
+#profile .maindata {
+	background: #fff url('/Content/Images/bg-paper.png') repeat-y right top;
+}
+
+	#profile .maindata .item .firsto:before {
+		border-color: transparent #4a6676 transparent transparent;
+	}
+
+#profile .quote:before {
+	border-color: transparent #aa331f transparent transparent;
+}
+
+#profile .maindata .item .firsto span {
+	background-color: #648293;
+	color: #fff;
+}
+
+#profile .quote {
+	background: #ECEEF2 url('/Content/Images/detailbott.png') repeat-x left bottom;
+}
+
+	#profile .quote h3 {
+		background-color: #DC5038;
+		color: #FFFFFF;
+	}
+
+		#profile .quote h3:before {
+			opacity: .5;
+		}
+
+	#profile .quote h4 {
+		color: #DC5038;
+	}
+
+#profile ul.linkdata li:nth-child(2n+1) {
+	background: #648293;
+}
+
+#profile ul.linkdata li:nth-child(2n+2) {
+	background: #4A6676;
+}
+
+#profile ul.linkdata li a i {
+	background: rgba(255, 255, 255, 0.1);
+}
+
+.no-touch #profile ul.linkdata li a:hover i, .no-touch #profile ul.linkdata li a:active i, .no-touch #profile ul.linkdata li a:focus i {
+	-webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2);
+	box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.2);
+}
+
+.no-touch #profile ul.linkdata:hover a {
+	color: rgba(255, 255, 255, 0.4);
+}
+
+	.no-touch #profile ul.linkdata:hover a:hover {
+		color: rgba(255, 255, 255, 1);
+	}
+
+#profile ul.linkdata li a {
+	color: rgba(255, 255, 255, 1);
+}
+
+	#profile ul.linkdata li a:hover {
+		background-color: #DC5038;
+	}
+
+	#profile ul.linkdata li a span {
+		color: #648293;
+	}
+
+#profile ul.social li.vimeo a {
+	background-image: url("/Content/Images/vimeo-dark.gif");
+}
+
+#profile ul.social li.facebook a {
+	background-image: url("/Content/Images/facebook-dark.gif");
+}
+
+#profile ul.social li.linkedin a {
+	background-image: url("/Content/Images/linkedin-dark.gif");
+}
+
+#profile ul.social li.twitter a {
+	background-image: url("/Content/Images/twitter-dark.gif");
+}
+
+#profile ul.social li.pinterest a {
+	background-image: url("/Content/Images/pinterest-dark.gif");
+}
+
+#profile ul.social li.googleplus a {
+	background-image: url("/Content/Images/googleplus-dark.gif");
+}
+
+
+/*-------------------------------------------------------*/
+/* Resume */
+/*-------------------------------------------------------*/
+
+#resume ul.box-years li a {
+	color: #648293;
+}
+
+	#resume ul.box-years li a.current {
+		background-color: #DC5038;
+	}
+
+		#resume ul.box-years li a.current, #resume ul.box-years li a.current:hover {
+			color: #fff;
+		}
+
+	#resume ul.box-years li a:hover {
+		color: #96B5C5;
+	}
+
+#resume .box-txt-years {
+	background: #ECEEF2 url("/Content/Images/detailbott.png") repeat-x left bottom;
+}
+
+#resume ul.box-years li a.current:after {
+	color: #DC5038;
+}
+
+#resume .yearsize h4 {
+	color: #648293;
+	-webkit-text-shadow: none;
+	text-shadow: none;
+}
+
+#resume .yearsize h5 {
+	color: #DC5038;
+}
+
+#resume .yearsize a {
+	border-bottom: 1px dotted #DC5038;
+	color: #648293;
+}
+
+	#resume .yearsize a:hover {
+		color: #DC5038;
+	}
+
+#resume .note span {
+	background-color: #648293;
+	color: #FFFFFF;
+}
+
+#resume .skill h2, #resume .certificate h2 {
+	color: #fff;
+	background-color: #4A6676;
+}
+
+#resume .skill .item-skill.shadow:after {
+	-webkit-box-shadow: 0 11px 8px rgba(0, 0, 0, 0.8);
+	box-shadow: 0 11px 8px rgba(0, 0, 0, 0.8);
+}
+
+#resume .skill .item-skill h3 {
+	background-color: #ECEEF2;
+	color: #4A6676;
+}
+
+.my-progress-bar {
+	background: none repeat scroll 0 0 #ECEEF2;
+}
+
+	.my-progress-bar div {
+		background: none repeat scroll 0 0 #DC5038;
+	}
+
+#resume h2 i {
+	color: #96B5C5;
+}
+
+#resume .skill h2:after, #resume .certificate h2:after {
+	-webkit-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.1), inset 0 -1px 0 rgba(255, 255, 255, 0.2);
+	box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.1), inset 0 -1px 0 rgba(255, 255, 255, 0.2);
+}
+
+#resume .certificate ul li {
+	color: #648293;
+	border-bottom: 1px dashed #648293;
+}
+
+	#resume .certificate ul li strong {
+		color: #DC5038;
+	}
+
+	#resume .certificate ul li:last-child {
+		border-bottom: none;
+	}
+
+/*-------------------------------------------------------*/
+/* Portfolio */
+/*-------------------------------------------------------*/
+
+#portfolio {
+	background-color: #DADADA;
+}
+
+	#portfolio .box {
+		background: #fff;
+	}
+
+		#portfolio .box.featured {
+			background: #DC5038;
+			color: #fff;
+		}
+
+			#portfolio .box.featured.icon a i {
+				color: #fff;
+			}
+
+		#portfolio .box.icon a i {
+			color: #DC5038;
+		}
+
+		#portfolio .box.quote i {
+			color: #DADADA;
+		}
+
+		#portfolio .box.quote span.sign {
+			color: #DC5038;
+		}
+
+		#portfolio .box h3 {
+			color: #DC5038;
+		}
+
+		#portfolio .box a {
+			color: #DC5038;
+		}
+
+			#portfolio .box a:hover {
+				color: #648293;
+			}
+
+		#portfolio .box.featured a:hover {
+			color: #fff;
+		}
+
+		#portfolio .box.featured a {
+			color: #DADADA;
+		}
+
+		#portfolio .box.featured h3 {
+			color: #fff;
+		}
+
+		#portfolio .box a.link {
+			border-bottom: 1px dotted #648293;
+			color: #648293;
+		}
+
+		#portfolio .box.featured a.link {
+			border-bottom: 1px dotted #DADADA;
+			color: #DADADA;
+		}
+
+/*-------------------------------------------------------*/
+/* Contact */
+/*-------------------------------------------------------*/
+
+#contact #map {
+	border: 10px solid #fff;
+	color: #4B5562;
+	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+	#contact #map h3 {
+		color: #DC5038;
+		-webkit-text-shadow: none;
+		text-shadow: none;
+	}
+
+#contact .send:before {
+	border-color: transparent #aa331f transparent transparent;
+}
+
+#contact .send {
+	background: #ECEEF2 url('/Content/Images/detailbott.png') repeat-x left bottom;
+}
+
+	#contact .send h3 {
+		background-color: #DC5038;
+	}
+
+		#contact .send h3 a {
+			color: #FFFFFF;
+			opacity: .7;
+		}
+
+#contact h3 a:hover, #contact h3 a.active {
+	color: #fff;
+	opacity: 1;
+}
+
+input, textarea {
+	background: #DADADA;
+	color: #66696D;
+}
+
+#formContact *:focus {
+	background-color: #fff;
+	color: #4A6676;
+}
+
+/*input:valid, textarea:valid {
+	background: #fff;
+}*/
+
+input[type="submit"], input[type="button"] {
+	background: none repeat scroll 0 0 #DC5038;
+	color: #FFFFFF;
+}
+
+	input[type="submit"]:hover, input[type="submit"]:active, input[type="button"]:hover, input[type="button"]:active {
+		color: #fff;
+		background: #648293;
+	}
+
+	input[type="submit"]:active, input[type="button"]:active {
+		color: #585858;
+		background: #fff;
+	}
+
+input[type="button"] {
+	background: #f33;
+}
+
+.statusMessage {
+	color: #585858;
+}
+
+	.statusMessage p i {
+		color: #DC5038;
+	}
+
+/*-------------------------------------------------------*/
+/* Footer */
+/*-------------------------------------------------------*/
+
+footer {
+	background: transparent url('/Content/Images/line-dark.gif') repeat-x left top;
+}
+
+	footer .container {
+		background: transparent url('/Content/Images/bg-sh-bott-dark.png') no-repeat center top;
+	}
+
+		footer .container .twttplug {
+			color: #648293;
+		}
+
+			footer .container .twttplug a {
+				color: #DC5038;
+			}
+
+				footer .container .twttplug a:hover {
+					text-decoration: underline;
+				}
